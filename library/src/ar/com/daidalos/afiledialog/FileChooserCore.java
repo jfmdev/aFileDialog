@@ -168,6 +168,7 @@ class FileChooserCore {
 
 			// Set an EditText view to get the file's name.
 			final EditText input = new EditText(context);
+			input.setSingleLine();
 			alert.setView(input);
 
 			// Set the 'ok' and 'cancel' buttons.

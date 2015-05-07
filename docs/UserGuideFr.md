@@ -9,7 +9,7 @@ Pour utiliser _aFileDialog_, dans votre logiciel, il faut suivre les suivants pa
 
 **1)** Ajouter une référence au projet de la librairie (situé dans le dossier [library](../library/)). Étant donné que _aFileDialog_ est un _projet de librairie d'Android_, il ne peut pas être compilé et distribué comme un fichier binaire (comme, par exemple, un fichier JAR), à cause de ça on doit faire la référence au dossier du projet (avec le code source), en lieu de faire la référence à un fichier JAR. 
 
-**2)** Déclarer la activité _FileChooserActivity_ dans le fichier de manifeste. On peut faire ça en ajoutant les lignes suivantes entre les étiquettes `</application></application>`:
+**2)** Déclarer la activité _FileChooserActivity_ dans le fichier de manifeste. On peut faire ça en ajoutant les lignes suivantes entre les étiquettes `<application></application>`:
 	
 ```xml
     <activity android:name="ar.com.daidalos.afiledialog.FileChooserActivity" />

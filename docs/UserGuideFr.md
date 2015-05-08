@@ -21,7 +21,7 @@ Pour utiliser _aFileDialog_, dans votre logiciel, il faut suivre les suivants pa
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-Pour plus d'information sur comment faire une référence à un projet de librairie et comment déclarer une activité dans le fichier de manifeste, vous pouvez lire la [documentation officielle d'Android](http://developer.android.com/tools/projects/projects-eclipse.html).
+Pour plus d'information sur comment faire une référence à un projet de librairie et comment déclarer une activité dans le fichier de manifeste, vous pouvez lire la [documentation officielle d'Android](https://developer.android.com/sdk/installing/create-project.html#ReferencingLibraryModule).
 
 ###  1.2. Afficher le sélecteur de fichiers 
 

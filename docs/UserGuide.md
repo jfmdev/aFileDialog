@@ -21,7 +21,7 @@ In order to use _aFileDialog_ in your application you must do three steps:
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-You can check the [Android documentation](http://developer.android.com/tools/projects/projects-eclipse.html) in order to get more information about how to reference a library project and how to declare an activity in the manifest file.
+You can check the [Android documentation](https://developer.android.com/sdk/installing/create-project.html#ReferencingLibraryModule) in order to get more information about how to reference a library project and how to declare an activity in the manifest file.
 
 ### 1.2. Show the dialog
 

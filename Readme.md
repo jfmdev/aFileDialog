@@ -28,7 +28,21 @@ In order to use _aFileDialog_ in your application you must do three steps:
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-Then you must only create an instance of _FileChooserDialog_ and call the _show()_ method or start the activity _FileChooserActivity_.
+**4)** Then you must only create an instance of _FileChooserDialog_ and call the _show()_ method:
+
+```java
+    FileChooserDialog dialog = new FileChooserDialog(context);
+    dialog.show();
+```
+
+Or start the activity _FileChooserActivity_:
+
+```java
+    Intent intent = new Intent(this, FileChooserActivity.class);
+    this.startActivityForResult(intent, 0);
+```
+
+> **Note:** the current version of the library is developed using _Android Studio_, if you are using _Eclipse_, then you should check the [eclipse](https://github.com/jfmdev/aFileDialog/tree/eclipse) branch.
 
 Demo
 ----
@@ -45,23 +59,6 @@ _aFileDialog_ has been designed in order to be easy to use and easy to develop.
 In order to known how to use _aFileDialog_, check the [user guide](docs/UserGuide.md) (also available in [Spanish](docs/UserGuideEs.md) and [French](docs/UserGuideFr.md)).
 
 If you want to modify or extend _aFileDialog_, you can read the [software design description](docs/SoftwareDesignDescription.md) (also available in [Spanish](docs/SoftwareDesignDescriptionEs.md)), although this is not mandatory, since the code is fully commented and you are going to figure out how it works in matters of minutes.
-
-Code samples
-------------
-
-Samples codes are available in the [user guide](docs/UserGuide.md), but, to summarize, you can open a file chooser (implemented with a _Dialog_) using the following lines:
-
-```java
-FileChooserDialog dialog = new FileChooserDialog(context);
-dialog.show();
-```
-
-To open a file chooser implemented with an _Activity_, you can use the following lines:
-
-```java
-Intent intent = new Intent(this, FileChooserActivity.class);
-this.startActivityForResult(intent, 0);
-```
 
 License
 -------

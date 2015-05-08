@@ -1,4 +1,11 @@
-/demo/gen
-/demo/bin
-/library/gen
-/library/bin
+/demo/.idea
+/demo/build
+/demo/local.properties
+/demo/aFileDialog/build
+/demo/aFileDialogTesting/build
+
+/library/.idea
+/library/build
+/library/local.properties
+/library/app/build
+

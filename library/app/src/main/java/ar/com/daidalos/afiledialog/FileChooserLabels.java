@@ -38,6 +38,7 @@ public class FileChooserLabels implements Serializable {
 	 */
 	public FileChooserLabels() {
 		this.labelAddButton = null;
+		this.labelCancelButton = null;
 		this.labelSelectButton = null;
 		this.messageConfirmSelection = null;
 		this.messageConfirmCreation = null;
@@ -53,7 +54,12 @@ public class FileChooserLabels implements Serializable {
 	 * The label for the button used to create a file or a folder.
 	 */
 	public String labelAddButton;
-	
+
+	/**
+	 * The label for the cancel button.
+	 */
+	public String labelCancelButton;
+
 	/**
 	 * The label for the button for select the current folder (when using the file chooser for select folders).
 	 */

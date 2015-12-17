@@ -1,10 +1,12 @@
 /demo/.idea
+/demo/.gradle
 /demo/build
 /demo/local.properties
 /demo/aFileDialog/build
 /demo/aFileDialogTesting/build
 
 /library/.idea
+/library/.gradle
 /library/build
 /library/local.properties
 /library/app/build

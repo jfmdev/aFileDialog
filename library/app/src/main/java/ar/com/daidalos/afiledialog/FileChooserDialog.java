@@ -94,15 +94,24 @@ public class FileChooserDialog extends Dialog implements FileChooser {
         core.addListener(new FileChooserCore.OnFileSelectedListener() {
 			public void onFileSelected(File folder, String name) {
 				// Call to the listeners.
-				for(int i=0; i<FileChooserDialog.this.listeners.size(); i++) {
+				for (int i = 0; i < FileChooserDialog.this.listeners.size(); i++) {
 					FileChooserDialog.this.listeners.get(i).onFileSelected(FileChooserDialog.this, folder, name);
 				}
 			}
+
 			public void onFileSelected(File file) {
 				// Call to the listeners.
-				for(int i=0; i<FileChooserDialog.this.listeners.size(); i++) {
+				for (int i = 0; i < FileChooserDialog.this.listeners.size(); i++) {
 					FileChooserDialog.this.listeners.get(i).onFileSelected(FileChooserDialog.this, file);
 				}
+			}
+		});
+
+		// Add a listener for when the cancel button is pressed.
+		core.addListener(new FileChooserCore.OnCancelListener() {
+			public void onCancel() {
+				// Close activity.
+                FileChooserDialog.super.onBackPressed();
 			}
 		});
 	}
@@ -210,11 +219,20 @@ public class FileChooserDialog extends Dialog implements FileChooser {
 	public void setCanCreateFiles(boolean canCreate) {
 		this.core.setCanCreateFiles(canCreate);
 	}
-	
+
+	/**
+	 * Defines if the cancel button must be show.
+	 *
+	 * @param canShow 'true' if the user can create files or 'false' if it can only select them.
+	 */
+	public void setShowCancelButton(boolean canShow) {
+		this.core.setShowCancelButton(canShow);
+	}
+
 	/**
 	 * Defines the value of the labels.
 	 * 
-	 * @param label The labels.
+	 * @param labels The labels.
 	 */
 	public void setLabels(FileChooserLabels labels) {
 		this.core.setLabels(labels);

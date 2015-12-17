@@ -63,6 +63,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/custom_labels" />
 
+            <Button
+                android:id="@+id/dialog_cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel_button" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -119,6 +125,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/custom_labels" />
+
+            <Button
+                android:id="@+id/activity_cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel_button" />
 
         </LinearLayout>
 

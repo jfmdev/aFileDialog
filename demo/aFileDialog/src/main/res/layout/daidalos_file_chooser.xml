@@ -44,6 +44,14 @@
             android:layout_weight="1"
             android:drawableLeft="@drawable/tick"
             android:text="@string/daidalos_ok" />
-        
+
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/no"
+            android:text="@string/daidalos_cancel" />
+
     </LinearLayout>
 </LinearLayout>

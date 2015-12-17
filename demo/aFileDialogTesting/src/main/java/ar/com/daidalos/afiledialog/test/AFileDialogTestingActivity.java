@@ -55,6 +55,8 @@ public class AFileDialogTestingActivity extends Activity {
         buttonActivity6.setOnClickListener(btnActivityAskConfirmation);
         Button buttonActivity7 = (Button)this.findViewById(R.id.activity_custom_labels);
         buttonActivity7.setOnClickListener(btnActivityCustomLabels);
+		Button buttonActivity8 = (Button)this.findViewById(R.id.activity_cancel_button);
+		buttonActivity8.setOnClickListener(btnActivityCancelButton);
 
         Button buttonDialog1 = (Button)this.findViewById(R.id.dialog_simple_open);
         buttonDialog1.setOnClickListener(btnDialogSimpleOpen);
@@ -70,6 +72,8 @@ public class AFileDialogTestingActivity extends Activity {
         buttonDialog6.setOnClickListener(btnDialogAskConfirmation);
         Button buttonDialog7 = (Button)this.findViewById(R.id.dialog_custom_labels);
         buttonDialog7.setOnClickListener(btnDialogCustomLabels);
+		Button buttonDialog8 = (Button)this.findViewById(R.id.dialog_cancel_button);
+		buttonDialog8.setOnClickListener(btnDialogCancelButton);
     }
     
     // ----- Buttons for open a dialog ----- //
@@ -184,7 +188,10 @@ public class AFileDialogTestingActivity extends Activity {
     		
     		// Activate the button for create files.
     		dialog.setCanCreateFiles(true);
-    		
+
+			// Activate the button for cancel.
+			dialog.setShowCancelButton(true);
+
     		// Activate the confirmation dialogs.
     		dialog.setShowConfirmation(true, true);
     		
@@ -200,13 +207,31 @@ public class AFileDialogTestingActivity extends Activity {
     		labels.messageConfirmSelection = "messageConfirmSelection";
     		labels.labelConfirmYesButton = "yesButton";
     		labels.labelConfirmNoButton = "noButton";
+			labels.labelCancelButton = "cancelButton";
     		dialog.setLabels(labels);
     		
     		// Show the dialog.
             dialog.show();
     	}
 	};
-	
+
+
+    private OnClickListener btnDialogCancelButton = new OnClickListener() {
+        public void onClick(View v) {
+            // Create the dialog.
+            FileChooserDialog dialog = new FileChooserDialog(AFileDialogTestingActivity.this);
+
+            // Assign listener for the select event.
+            dialog.addListener(AFileDialogTestingActivity.this.onFileSelectedListener);
+
+            // Activate the button for create files.
+            dialog.setShowCancelButton(true);
+
+            // Show the dialog.
+            dialog.show();
+        }
+    };
+
 	// ---- Buttons for open an activity ----- //
     
 	private OnClickListener btnActivitySimpleOpen = new OnClickListener() {
@@ -298,7 +323,10 @@ public class AFileDialogTestingActivity extends Activity {
             
             // Activate the button for create files.
             intent.putExtra(FileChooserActivity.INPUT_CAN_CREATE_FILES, true);
-            
+
+			// Activate the cancel button.
+			intent.putExtra(FileChooserActivity.INPUT_SHOW_CANCEL_BUTTON, true);
+
             // Activate the confirmation dialogs.
             intent.putExtra(FileChooserActivity.INPUT_SHOW_CONFIRMATION_ON_CREATE, true);
             intent.putExtra(FileChooserActivity.INPUT_SHOW_CONFIRMATION_ON_SELECT, true);
@@ -315,13 +343,27 @@ public class AFileDialogTestingActivity extends Activity {
     		labels.messageConfirmSelection = "messageConfirmSelection";
     		labels.labelConfirmYesButton = "yesButton";
     		labels.labelConfirmNoButton = "noButton";
+			labels.labelCancelButton = "cancelButton";
     		intent.putExtra(FileChooserActivity.INPUT_LABELS, (Serializable) labels);
     		
     		// Call the activity            
             AFileDialogTestingActivity.this.startActivityForResult(intent, 0); 
     	}
 	};
-	
+
+    private OnClickListener btnActivityCancelButton = new OnClickListener() {
+        public void onClick(View v) {
+            // Create the intent for call the activity.
+            Intent intent = new Intent(AFileDialogTestingActivity.this, FileChooserActivity.class);
+
+            // Activate the folder mode.
+            intent.putExtra(FileChooserActivity.INPUT_SHOW_CANCEL_BUTTON, true);
+
+            // Call the activity
+            AFileDialogTestingActivity.this.startActivityForResult(intent, 0);
+        }
+    };
+
 	/*
 	private OnClickListener clickButtonOpenActivity = new OnClickListener() {
     	public void onClick(View v) {

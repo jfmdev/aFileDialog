@@ -70,7 +70,13 @@ public class FileChooserActivity extends Activity implements FileChooser {
 	 * a boolean that indicates if the user can create files. 
 	 */
 	public static final String INPUT_CAN_CREATE_FILES = "input_can_create_files";
-	
+
+	/**
+	 * Constant used for represent the key of the bundle object (inside the start's intent) which contains
+	 * a boolean that indicates if the cancel button must be show.
+	 */
+	public static final String INPUT_SHOW_CANCEL_BUTTON = "input_show_cancel_button";
+
 	/**
 	 * Constant used for represent the key of the bundle object (inside the start's intent) which contains 
 	 * a regular expression which is going to be used as a filter to determine which files can be selected. 
@@ -160,6 +166,7 @@ public class FileChooserActivity extends Activity implements FileChooser {
             if(extras.containsKey(INPUT_CAN_CREATE_FILES)) core.setCanCreateFiles(extras.getBoolean(INPUT_CAN_CREATE_FILES));
             if(extras.containsKey(INPUT_LABELS)) core.setLabels((FileChooserLabels) extras.get(INPUT_LABELS));
             if(extras.containsKey(INPUT_SHOW_CONFIRMATION_ON_CREATE)) core.setShowConfirmationOnCreate(extras.getBoolean(INPUT_SHOW_CONFIRMATION_ON_CREATE));
+            if(extras.containsKey(INPUT_SHOW_CANCEL_BUTTON)) core.setShowCancelButton(extras.getBoolean(INPUT_SHOW_CANCEL_BUTTON));
             if(extras.containsKey(INPUT_SHOW_CONFIRMATION_ON_SELECT)) core.setShowConfirmationOnSelect(extras.getBoolean(INPUT_SHOW_CONFIRMATION_ON_SELECT));
             if(extras.containsKey(INPUT_SHOW_FULL_PATH_IN_TITLE)) core.setShowFullPathInTitle(extras.getBoolean(INPUT_SHOW_FULL_PATH_IN_TITLE));
             if(extras.containsKey(INPUT_USE_BACK_BUTTON_TO_NAVIGATE)) this.useBackButton = extras.getBoolean(INPUT_USE_BACK_BUTTON_TO_NAVIGATE);
@@ -191,6 +198,14 @@ public class FileChooserActivity extends Activity implements FileChooser {
 				
                 setResult(RESULT_OK, intent);
                 finish();	
+			}
+		});
+
+		// Add a listener for when the cancel button is pressed.
+		core.addListener(new FileChooserCore.OnCancelListener() {
+			public void onCancel() {
+                // Close activity.
+                FileChooserActivity.super.onBackPressed();
 			}
 		});
     }

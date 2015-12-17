@@ -14,5 +14,6 @@
     <string name="select_images">Choisir images</string>
     <string name="ask_confirmation">Démander confirmation</string>
     <string name="custom_labels">Étiquettes personnalisés</string>
+    <string name="cancel_button">Bouton annuler</string>
 
 </resources>

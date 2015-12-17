@@ -51,8 +51,13 @@ class FileChooserCore {
 	/**
 	 * The listeners for the event of select a file.
 	 */
-	private List<OnFileSelectedListener> listeners;
-	
+	private List<OnFileSelectedListener> fileSelectedListeners;
+
+    /**
+     * The listeners for the event of select a file.
+     */
+    private List<OnCancelListener> cancelListeners;
+
 	/**
 	 * A regular expression for filter the files.
 	 */
@@ -72,7 +77,12 @@ class FileChooserCore {
 	 * A boolean indicating if the chooser is going to be used to select folders.
 	 */
 	private boolean folderMode;
-	
+
+	/**
+	 * A boolean indicating if the chooser is going to be used to select folders.
+	 */
+	private boolean showCancelButton;
+
 	/**
 	 * A file that indicates the folder that is currently being displayed.
 	 */
@@ -122,7 +132,8 @@ class FileChooserCore {
 	public FileChooserCore(FileChooser fileChooser) {
 		// Initialize attributes.
 		this.chooser = fileChooser;	
-		this.listeners = new LinkedList<OnFileSelectedListener>();
+		this.fileSelectedListeners = new LinkedList<OnFileSelectedListener>();
+        this.cancelListeners = new LinkedList<OnCancelListener>();
 		this.filter = null;
 		this.showOnlySelectable = false;
 		this.setCanCreateFiles(false);
@@ -132,13 +143,16 @@ class FileChooserCore {
 		this.showConfirmationOnCreate = false;
 		this.showConfirmationOnSelect = false;
 		this.showFullPathInTitle = false;
-		
-		// Add listener for the  buttons.
+        this.showCancelButton = false;
+
+		// Add listener for the buttons.
 		LinearLayout root = this.chooser.getRootLayout();
 		Button addButton = (Button) root.findViewById(R.id.buttonAdd);
 		addButton.setOnClickListener(addButtonClickListener);
 		Button okButton = (Button) root.findViewById(R.id.buttonOk);
 		okButton.setOnClickListener(okButtonClickListener);
+        Button cancelButton = (Button) root.findViewById(R.id.buttonCancel);
+        cancelButton.setOnClickListener(cancelButtonClickListener);
 	}
 	
 	// ----- Events methods ----- //
@@ -178,7 +192,7 @@ class FileChooserCore {
 					// Verify if a value has been entered.
 					if(fileName != null && fileName.length() > 0) {
 						// Notify the listeners.
-						FileChooserCore.this.notifyListeners(FileChooserCore.this.currentFolder, fileName);
+						FileChooserCore.this.notifyFileListeners(FileChooserCore.this.currentFolder, fileName);
 					}
 				}
 			});
@@ -199,10 +213,20 @@ class FileChooserCore {
 	private View.OnClickListener okButtonClickListener = new View.OnClickListener() {
 		public void onClick(View v) {
 			// Notify the listeners.
-			FileChooserCore.this.notifyListeners(FileChooserCore.this.currentFolder, null);
+			FileChooserCore.this.notifyFileListeners(FileChooserCore.this.currentFolder, null);
 		}
 	};
-	
+
+    /**
+     * Implementation of the click listener for when the cancel button is clicked.
+     */
+    private View.OnClickListener cancelButtonClickListener = new View.OnClickListener() {
+        public void onClick(View v) {
+            // Notify the listeners.
+            FileChooserCore.this.notifyCancelListeners();
+        }
+    };
+
 	/**
 	 * Implementation of the click listener for when a file item is clicked.
 	 */
@@ -215,7 +239,7 @@ class FileChooserCore {
 				FileChooserCore.this.loadFolder(file);
 			} else {
 				// Notify the listeners.
-				FileChooserCore.this.notifyListeners(file, null);
+				FileChooserCore.this.notifyFileListeners(file, null);
 			}
 		}
 	};
@@ -226,7 +250,7 @@ class FileChooserCore {
 	 * @param listener The listener to add.
 	 */
 	public void addListener(OnFileSelectedListener listener) {
-		this.listeners.add(listener);
+		this.fileSelectedListeners.add(listener);
 	}
 	
 	/**
@@ -235,16 +259,35 @@ class FileChooserCore {
 	 * @param listener The listener to remove.
 	 */
 	public void removeListener(OnFileSelectedListener listener) {
-		this.listeners.remove(listener);
+		this.fileSelectedListeners.remove(listener);
 	}
-	
-	/**
-	 * Removes all the listeners for the event of a file selected.
-	 */
-	public void removeAllListeners() {
-		this.listeners.clear();
-	}
-	
+
+    /**
+     * Add a listener for the event of a file selected.
+     *
+     * @param listener The listener to add.
+     */
+    public void addListener(OnCancelListener listener) {
+        this.cancelListeners.add(listener);
+    }
+
+    /**
+     * Removes a listener for the event of a file selected.
+     *
+     * @param listener The listener to remove.
+     */
+    public void removeListener(OnCancelListener listener) {
+        this.cancelListeners.remove(listener);
+    }
+
+    /**
+     * Removes all the listeners for the event of a file selected.
+     */
+    public void removeAllListeners() {
+        this.fileSelectedListeners.clear();
+        this.cancelListeners.clear();
+    }
+
 	/**
 	 * Interface definition for a callback to be invoked when a file is selected. 
 	 */
@@ -264,14 +307,33 @@ class FileChooserCore {
 		 */
 		void onFileSelected(File folder, String name);
 	}
-	
+
+    /**
+     * Interface definition for a callback to be invoked when the cancel button is clicked.
+     */
+    public interface OnCancelListener {
+        /**
+         * Called when the cancel button is clicked.
+         */
+        void onCancel();
+    }
+
+    /**
+     * Notify to all listeners that the cancel button has been pressed.
+     */
+    private void notifyCancelListeners() {
+        for(int i=0; i<FileChooserCore.this.cancelListeners.size(); i++) {
+            FileChooserCore.this.cancelListeners.get(i).onCancel();
+        }
+    }
+
 	/**
 	 * Notify to all listeners that a file has been selected or created.
 	 * 
 	 * @param file The file or folder selected or the folder in which the file must be created.
 	 * @param name The name of the file that must be created or 'null' if a file was selected (instead of being created).
 	 */
-	private void notifyListeners(final File file, final String name) {
+	private void notifyFileListeners(final File file, final String name) {
 		// Determine if a file has been selected or created.
 		final boolean creation = name != null && name.length() > 0;
 		
@@ -301,11 +363,11 @@ class FileChooserCore {
 			alert.setPositiveButton(posButton, new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int whichButton) {
 					// Notify to listeners.
-					for(int i=0; i<FileChooserCore.this.listeners.size(); i++) {
+					for(int i=0; i<FileChooserCore.this.fileSelectedListeners.size(); i++) {
 						if(creation) {
-							FileChooserCore.this.listeners.get(i).onFileSelected(file, name);				
+							FileChooserCore.this.fileSelectedListeners.get(i).onFileSelected(file, name);
 						} else {
-							FileChooserCore.this.listeners.get(i).onFileSelected(file);
+							FileChooserCore.this.fileSelectedListeners.get(i).onFileSelected(file);
 						}
 					}	
 				}
@@ -320,11 +382,11 @@ class FileChooserCore {
 			alert.show();
 		} else {
 			// Notify to listeners.
-			for(int i=0; i<FileChooserCore.this.listeners.size(); i++) {
+			for(int i=0; i<FileChooserCore.this.fileSelectedListeners.size(); i++) {
 				if(creation) {
-					FileChooserCore.this.listeners.get(i).onFileSelected(file, name);				
+					FileChooserCore.this.fileSelectedListeners.get(i).onFileSelected(file, name);
 				} else {
-					FileChooserCore.this.listeners.get(i).onFileSelected(file);
+					FileChooserCore.this.fileSelectedListeners.get(i).onFileSelected(file);
 				}
 			}			
 		}		
@@ -362,7 +424,7 @@ class FileChooserCore {
 	/**
 	 * Defines the value of the labels.
 	 * 
-	 * @param label The labels.
+	 * @param labels The labels.
 	 */
 	public void setLabels(FileChooserLabels labels) {
 		this.labels = labels;
@@ -379,7 +441,12 @@ class FileChooserCore {
 			if(labels.labelSelectButton != null) {
 				Button okButton = (Button) root.findViewById(R.id.buttonOk);
 				okButton.setText(labels.labelSelectButton);
-			}			
+			}
+
+            if(labels.labelCancelButton != null) {
+                Button cancelButton = (Button) root.findViewById(R.id.buttonCancel);
+                cancelButton.setText(labels.labelCancelButton);
+            }
 		}
 	}
 	
@@ -413,7 +480,19 @@ class FileChooserCore {
 		// Reload the list of files.
 		this.loadFolder(this.currentFolder);
 	}
-	
+
+	/**
+	 * Defines if the chooser is going to be used to select folders, instead of files.
+	 *
+	 * @param showCancelButton 'true' for show the cancel button or 'false' for not showing it.
+	 */
+	public void setShowCancelButton(boolean showCancelButton) {
+		this.showCancelButton = showCancelButton;
+
+		// Show or hide the 'Cancel' button.
+		updateButtonsLayout();
+	}
+
 	/**
 	 * Defines if the user can create files, instead of only select files.
 	 * 
@@ -455,37 +534,19 @@ class FileChooserCore {
 	private void updateButtonsLayout() {
 		// Get the buttons layout.
 		LinearLayout root = this.chooser.getRootLayout();
-		LinearLayout buttonsLayout = (LinearLayout) root.findViewById(R.id.linearLayoutButtons);
 
 		// Verify if the 'Add' button is visible or not.
 		View addButton = root.findViewById(R.id.buttonAdd);
-		addButton.setVisibility(this.canCreateFiles? View.VISIBLE : View.INVISIBLE);
-		addButton.getLayoutParams().width = this.canCreateFiles? ViewGroup.LayoutParams.MATCH_PARENT : 0;
+		addButton.setVisibility(this.canCreateFiles? View.VISIBLE : View.GONE);
 
 		// Verify if the 'Ok' button is visible or not.
 		View okButton = root.findViewById(R.id.buttonOk);
-		okButton.setVisibility(this.folderMode? View.VISIBLE : View.INVISIBLE);
-		okButton.getLayoutParams().width = this.folderMode? ViewGroup.LayoutParams.MATCH_PARENT : 0;
-		
-		// If both buttons are invisible, hide the layout.
-		ViewGroup.LayoutParams params = buttonsLayout.getLayoutParams();
-		if(this.canCreateFiles || this.folderMode) {
-			// Show the layout.
-			params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+		okButton.setVisibility(this.folderMode? View.VISIBLE : View.GONE);
 
-			// If only the 'Ok' button is visible, put him first. Otherwise, put 'Add' first.
-			buttonsLayout.removeAllViews();
-			if(this.folderMode && !this.canCreateFiles) {
-				buttonsLayout.addView(okButton);
-				buttonsLayout.addView(addButton);
-			} else {
-				buttonsLayout.addView(addButton);			
-				buttonsLayout.addView(okButton);
-			}
-		} else {
-			// Hide the layout.
-			params.height = 0;
-		}
+        // Verify if the 'Cancel' button is visible or not.
+        View cancelButton = root.findViewById(R.id.buttonCancel);
+        cancelButton.setVisibility(this.showCancelButton? View.VISIBLE : View.GONE);
+
 	}
 	
 	/**

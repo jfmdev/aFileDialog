@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="daidalos_hello">Salut Lume!</string>
+    <string name="daidalos_app_name">aFileDialog</string>
+    <color name="daidalos_gray">#888</color>
+    <string name="daidalos_select">Selectare</string>
+    <string name="daidalos_cancel">Anulare</string>
+    <string name="daidalos_ok">OK</string>
+    <string name="daidalos_new_file">Nou</string>
+    <string name="daidalos_create_file">Creare fișier</string>
+    <string name="daidalos_create_folder">Creare director</string>
+    <string name="daidalos_accept">Acceptare</string>
+    <string name="daidalos_enter_file_name">Intoduceți numele fișierului nou</string>
+    <string name="daidalos_enter_folder_name">Introduceți numele directorului nou</string>
+    <string name="daidalos_yes">Da</string>
+    <string name="daidalos_no">Nu</string>
+    <string name="daidalos_confirm_select_file">Sigur doriți să selectați fișierul \'$file_name\'?</string>
+    <string name="daidalos_confirm_create_file">Fișierul \'$file_name\' nu există, sigur doriți să-l creați?</string>
+    <string name="daidalos_confirm_select_folder">Sigur doriți să selectați directorul \'$file_name\'?</string>
+    <string name="daidalos_confirm_create_folder">Directorul \'$file_name\' nu există, sigur doriți să-l creați?</string>
+    <color name="daidalos_backgroud">#000</color>
+    <color name="daidalos_active_file">#fff</color>
+    <color name="daidalos_inactive_file">#888</color>
+
+</resources>

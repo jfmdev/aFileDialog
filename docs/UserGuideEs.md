@@ -186,6 +186,8 @@ Si se está utilizando una _Activity_, entonces se debe poner un extra en el _In
 
 De manera similar, también se pueden filtrar directorios llamando al método _setFolderFilter()_, si se usa un _Dialog_, o usando el extra _FileChooserActivity.INPUT_REGEX_FOLDER_FILTER_, si se usa una _Activity_.
 
+> Tener en cuenta que al filtrar archivos, la expresión regular se aplica al nombre del archivo, mientras que al filtrar directorios, la expresión regular se aplica a la ruta absoluta del directorio.
+
 Al filtrar archivos y directorios, se puede definir además si los archivos/directorios que no pasen el filtro deben ser ocultados o no (en el caso de que no sean ocultados, son mostrados en gris para indicar que no pueden ser seleccionados).
 
 Con el fin de hacer esto, si se está utilizando un _Dialog_, entonces se debe llamar al método _setShowOnlySelectable()_ de la clase _FileChooserDialog_; si se está utilizando una _Activity_, entonces se debe poner un extra en el _Intent_ de nombre _FileChooserActivity.INPUT_SHOW_ONLY_SELECTABLE_.

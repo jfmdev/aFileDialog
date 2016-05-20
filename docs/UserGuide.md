@@ -185,6 +185,8 @@ If you are using an _Activity_, then you must put an extra in the _Intent_ with 
 
 In an analogous way, you can also filter folders by calling the method _setFolderFilter()_, if using a _Dialog_, or using the extra _FileChooserActivity.INPUT_REGEX_FOLDER_FILTER_, if using an _Activity_.
 
+> Note that when filtering files, the regular expression is applied to the file's name, but when filtering folders, the regular expression is applied to the file's absolute path.
+
 When filtering, you can also define if the files/folders that do not pass the filter must be hide or not (in which case they are going to be displayed in gray, in order to indicate that they can not be selected).
 
 In order to do it, if you are using a _Dialog_ then you must call the method _setShowOnlySelectable()_ of the class _FileChooserDialog_; if you are using an _Activity_, then you must put an extra in the _Intent_ with name _FileChooserActivity.INPUT_SHOW_ONLY_SELECTABLE_.

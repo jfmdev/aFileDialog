@@ -185,7 +185,9 @@ Si on utilise une _Activity_, alors on doit ajouter un extra au _Intent_ avec no
 ```
 
 De manière analogue, on peut également filtrer les dossiers en appelant la méthode _setFolderFilter () _, si vous utilisez un _Dialog_, ou en utilisant l'extra _FileChooserActivity.INPUT_REGEX_FOLDER_FILTER_, si vous utilisez une _Activity_.
-	
+
+> Il faut Noter que lors du filtrage de fichiers, l'expression régulière est appliquée au nom du fichier, mais lors du filtrage des dossiers, l'expression régulière est appliquée sur le chemin absolu du fichier.
+
 Quand on filtre des fichiers ou dossiers, on peut définir aussi si les fichiers/dossiers que ne sont pas sélectionnables doivent être affichés ou cachés (quand il sont affichés, il sont montrés avec un couleur grise, à fin d'indiquer à l'utilisateur que il ne le peut pas sélectionner).
 
 Pour faire ça, si on utilise un _Dialog_, alors on doit appeler le méthode _setShowOnlySelectable()_ de la classe _FileChooserDialog_; si on utilise une _Activity_, alors on doit ajouter un extra au _Intent_ avec le nom _FileChooserActivity.INPUT_SHOW_ONLY_SELECTABLE_.

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="daidalos_hello">Привет Мир!</string>
+    <string name="daidalos_app_name">aFileDialog</string>
+    <color name="daidalos_gray">#888</color>
+    <string name="daidalos_select">Выбрать</string>
+    <string name="daidalos_cancel">Отмена</string>
+    <string name="daidalos_ok">OK</string>
+    <string name="daidalos_new_file">Новый</string>
+    <string name="daidalos_create_file">Создать файл</string>
+    <string name="daidalos_create_folder">Создать папку</string>
+    <string name="daidalos_accept">Принять</string>
+    <string name="daidalos_enter_file_name">Введите имя нового файла</string>
+    <string name="daidalos_enter_folder_name">Введите имя новой папки</string>
+    <string name="daidalos_yes">Да</string>
+    <string name="daidalos_no">Нет</string>
+    <string name="daidalos_confirm_select_file">Вы уверены, что хотите выбрать файл \'$file_name\'?</string>
+    <string name="daidalos_confirm_create_file">Файл \'$file_name\' не существует, вы хотите его создать?</string>
+    <string name="daidalos_confirm_select_folder">Вы уверены, что хотите выбрать папку \'$file_name\'?</string>
+    <string name="daidalos_confirm_create_folder">Папка \'$file_name\' не существует, вы хотите её создать?</string>
+    <color name="daidalos_backgroud">#000</color>
+    <color name="daidalos_active_file">#fff</color>
+    <color name="daidalos_inactive_file">#888</color>
+
+</resources>

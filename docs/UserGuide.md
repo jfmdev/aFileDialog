@@ -228,7 +228,7 @@ In order to do it, you must only create an instance of _FileChooserLabels_ and d
     labels.messageConfirmCreation = "Are you sure that you want to create the file $file_name?";
     labels.messageConfirmSelection = "Are you sure that you want to open the file $file_name?";
     labels.labelConfirmYesButton = "Yes";
-    labels.labelConfirmNoButton = "Note;
+    labels.labelConfirmNoButton = "Note";
 ```
 
 Then you must pass this instance to the file chooser. If you are using a _Dialog_, you must call the method _setLabels()_ from the class _aFileDialog_:

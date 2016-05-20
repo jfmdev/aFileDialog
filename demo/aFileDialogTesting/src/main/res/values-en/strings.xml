@@ -15,5 +15,6 @@
     <string name="ask_confirmation">Ask confirmation</string>
     <string name="custom_labels">Custom labels</string>
     <string name="cancel_button">Cancel button</string>
+    <string name="filter_folders">Filter folders</string>
 
 </resources>

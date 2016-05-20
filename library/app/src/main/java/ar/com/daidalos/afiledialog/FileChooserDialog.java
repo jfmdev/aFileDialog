@@ -164,8 +164,7 @@ public class FileChooserDialog extends Dialog implements FileChooser {
 	}
 	
 	// ----- Miscellaneous methods ----- //
-	
-	
+
 	/**
 	 * Set a regular expression to filter the files that can be selected.
 	 * 
@@ -174,7 +173,16 @@ public class FileChooserDialog extends Dialog implements FileChooser {
 	public void setFilter(String filter) {
 		this.core.setFilter(filter);
 	}
-	
+
+	/**
+	 * Set a regular expression to filter the folders that can be explored.
+	 *
+	 * @param folderFilter A regular expression.
+	 */
+	public void setFolderFilter(String folderFilter) {
+		this.core.setFolderFilter(folderFilter);
+	}
+
 	/**
 	 * Defines if only the files that can be selected (they pass the filter) must be show.
 	 * 

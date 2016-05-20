@@ -57,6 +57,8 @@ public class AFileDialogTestingActivity extends Activity {
         buttonActivity7.setOnClickListener(btnActivityCustomLabels);
 		Button buttonActivity8 = (Button)this.findViewById(R.id.activity_cancel_button);
 		buttonActivity8.setOnClickListener(btnActivityCancelButton);
+		Button buttonActivity9 = (Button)this.findViewById(R.id.activity_filter_folders);
+		buttonActivity9.setOnClickListener(btnActivityFilterFolders);
 
         Button buttonDialog1 = (Button)this.findViewById(R.id.dialog_simple_open);
         buttonDialog1.setOnClickListener(btnDialogSimpleOpen);
@@ -74,6 +76,8 @@ public class AFileDialogTestingActivity extends Activity {
         buttonDialog7.setOnClickListener(btnDialogCustomLabels);
 		Button buttonDialog8 = (Button)this.findViewById(R.id.dialog_cancel_button);
 		buttonDialog8.setOnClickListener(btnDialogCancelButton);
+		Button buttonDialog9 = (Button)this.findViewById(R.id.dialog_filter_folders);
+		buttonDialog9.setOnClickListener(btnDialogFilterFolders);
     }
     
     // ----- Buttons for open a dialog ----- //
@@ -89,7 +93,7 @@ public class AFileDialogTestingActivity extends Activity {
     		// Show the dialog.
             dialog.show();
     	}
-	};    
+	};
     
     private OnClickListener btnDialogOpenDownloads = new OnClickListener() {
     	public void onClick(View v) {
@@ -212,9 +216,8 @@ public class AFileDialogTestingActivity extends Activity {
     		
     		// Show the dialog.
             dialog.show();
-    	}
+ 	   	}
 	};
-
 
     private OnClickListener btnDialogCancelButton = new OnClickListener() {
         public void onClick(View v) {
@@ -231,6 +234,23 @@ public class AFileDialogTestingActivity extends Activity {
             dialog.show();
         }
     };
+
+	private OnClickListener btnDialogFilterFolders = new OnClickListener() {
+		public void onClick(View v) {
+			// Create the dialog.
+			FileChooserDialog dialog = new FileChooserDialog(AFileDialogTestingActivity.this);
+
+			// Assign listener for the select event.
+			dialog.addListener(AFileDialogTestingActivity.this.onFileSelectedListener);
+
+			// Define start folder and don't allow to go up that folder.
+			dialog.loadFolder(Environment.getExternalStorageDirectory() + "");
+			dialog.setFolderFilter("("+Environment.getExternalStorageDirectory()+")|((.*)Download(.*))");
+
+			// Show the dialog.
+			dialog.show();
+		}
+	};
 
 	// ---- Buttons for open an activity ----- //
     
@@ -348,7 +368,7 @@ public class AFileDialogTestingActivity extends Activity {
     		
     		// Call the activity            
             AFileDialogTestingActivity.this.startActivityForResult(intent, 0); 
-    	}
+	    	}
 	};
 
     private OnClickListener btnActivityCancelButton = new OnClickListener() {
@@ -363,6 +383,20 @@ public class AFileDialogTestingActivity extends Activity {
             AFileDialogTestingActivity.this.startActivityForResult(intent, 0);
         }
     };
+
+	private OnClickListener btnActivityFilterFolders = new OnClickListener() {
+		public void onClick(View v) {
+			// Create the intent for call the activity.
+			Intent intent = new Intent(AFileDialogTestingActivity.this, FileChooserActivity.class);
+
+			// Define start folder and don't allow to go up that folder.
+			intent.putExtra(FileChooserActivity.INPUT_START_FOLDER, Environment.getExternalStorageDirectory() + "");
+			intent.putExtra(FileChooserActivity.INPUT_REGEX_FOLDER_FILTER, "("+Environment.getExternalStorageDirectory()+")|((.*)Download(.*))");
+
+			// Call the activity
+			AFileDialogTestingActivity.this.startActivityForResult(intent, 0);
+		}
+	};
 
 	/*
 	private OnClickListener clickButtonOpenActivity = new OnClickListener() {

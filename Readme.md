@@ -5,7 +5,7 @@ aFileDialog
 
 His main features are:
  * The file chooser can be opened both as a _Dialog_ or as an _Activity_.
- * You can filter the files using regular expressions.
+ * You can filter the files and folders using regular expressions.
  * Can select files or folders.
  * Can create files and folders.
 

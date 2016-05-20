@@ -15,5 +15,6 @@
     <string name="ask_confirmation">Pedir confirmación</string>
     <string name="custom_labels">Etiquetas personalizadas</string>
     <string name="cancel_button">Botón cancelar</string>
+    <string name="filter_folders">Filtrar carpetas</string>
 
 </resources>

@@ -163,7 +163,7 @@ If you are using an _Activity_, then you must put an extra in the _Intent_ with 
     this.startActivityForResult(intent, 0);
 ```
 
-### 2.3. Filter files
+### 2.3. Filter files and folders
 
 By default, the file chooser allows to the user to select any file, however we can user regular expressions in order to define which files can be selected and which not, depending of his name or extension.
 
@@ -175,7 +175,7 @@ If you are using a _Dialog_, then you must call the method _setFilter()_ from th
     dialog.show();
 ```
 
-If you are using an _Activity_, then you must put an extra in the _Intent_ with name _FileChooserActivity.INPUT_CAN_CREATE_FILES_ and the regular expression as value:
+If you are using an _Activity_, then you must put an extra in the _Intent_ with name _FileChooserActivity.INPUT_REGEX_FILTER_ and the regular expression as value:
 
 ```java
     Intent intent = new Intent(this, FileChooserActivity.class);
@@ -183,7 +183,9 @@ If you are using an _Activity_, then you must put an extra in the _Intent_ with 
     this.startActivityForResult(intent, 0);
 ```
 
-When filtering files, you can also define if the files that do not pass the filter must be hide or not (in which case they are going to be displayed in gray, in order to indicate that they can not be selected).
+In an analogous way, you can also filter folders by calling the method _setFolderFilter()_, if using a _Dialog_, or using the extra _FileChooserActivity.INPUT_REGEX_FOLDER_FILTER_, if using an _Activity_.
+
+When filtering, you can also define if the files/folders that do not pass the filter must be hide or not (in which case they are going to be displayed in gray, in order to indicate that they can not be selected).
 
 In order to do it, if you are using a _Dialog_ then you must call the method _setShowOnlySelectable()_ of the class _FileChooserDialog_; if you are using an _Activity_, then you must put an extra in the _Intent_ with name _FileChooserActivity.INPUT_SHOW_ONLY_SELECTABLE_.
 

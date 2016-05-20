@@ -82,7 +82,13 @@ public class FileChooserActivity extends Activity implements FileChooser {
 	 * a regular expression which is going to be used as a filter to determine which files can be selected. 
 	 */
 	public static final String INPUT_REGEX_FILTER = "input_regex_filter";
-	
+
+	/**
+	 * Constant used for represent the key of the bundle object (inside the start's intent) which contains
+	 * a regular expression which is going to be used as a filter to determine which folders can be explored.
+	 */
+	public static final String INPUT_REGEX_FOLDER_FILTER = "input_regex_folder_filter";
+
 	/**
 	 * Constant used for represent the key of the bundle object (inside the start's intent) which contains  
 	 * a boolean that indicates if only the files that can be selected must be displayed.
@@ -161,6 +167,7 @@ public class FileChooserActivity extends Activity implements FileChooser {
         if(extras != null) {
     		if(extras.containsKey(INPUT_START_FOLDER)) folderPath = extras.getString(INPUT_START_FOLDER);
             if(extras.containsKey(INPUT_REGEX_FILTER)) core.setFilter(extras.getString(INPUT_REGEX_FILTER));
+			if(extras.containsKey(INPUT_REGEX_FOLDER_FILTER)) core.setFolderFilter(extras.getString(INPUT_REGEX_FOLDER_FILTER));
             if(extras.containsKey(INPUT_SHOW_ONLY_SELECTABLE)) core.setShowOnlySelectable(extras.getBoolean(INPUT_SHOW_ONLY_SELECTABLE));
             if(extras.containsKey(INPUT_FOLDER_MODE)) core.setFolderMode(extras.getBoolean(INPUT_FOLDER_MODE));
             if(extras.containsKey(INPUT_CAN_CREATE_FILES)) core.setCanCreateFiles(extras.getBoolean(INPUT_CAN_CREATE_FILES));

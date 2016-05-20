@@ -164,7 +164,7 @@ Si se está utilizando una _Activity_, entonces se debe poner un extra en el _In
     this.startActivityForResult(intent, 0);
 ```
 
-### 2.3. Filtrar archivos
+### 2.3. Filtrar archivos y directorios
 
 Por defecto, el selector de archivos permite al usuario seleccionar cualquier archivo, sin embargo se pueden utilizar expresiones regulares a fin de definir que archivos pueden ser seleccionados o no, dependiendo de su nombre o de su extensión.
 
@@ -176,7 +176,7 @@ Si se está utilizando un _Dialog_, entonces se debe llamar al método _setFilte
     dialog.show();
 ```
 
-Si se está utilizando una _Activity_, entonces se debe poner un extra en el _Intent_ con nombre _FileChooserActivity.INPUT_CAN_CREATE_FILES_ y con la expresión regular como valor:
+Si se está utilizando una _Activity_, entonces se debe poner un extra en el _Intent_ con nombre _FileChooserActivity.INPUT_REGEX_FILTER_ y con la expresión regular como valor:
 
 ```java
     Intent intent = new Intent(this, FileChooserActivity.class);
@@ -184,7 +184,9 @@ Si se está utilizando una _Activity_, entonces se debe poner un extra en el _In
     this.startActivityForResult(intent, 0);
 ```
 
-Al filtrar archivos, se puede definir además si los archivos que no pasen el filtro deben ser ocultados o no (en el caso de que no sean ocultados, son mostrados en gris para indicar que no pueden ser seleccionados).
+De manera similar, también se pueden filtrar directorios llamando al método _setFolderFilter()_, si se usa un _Dialog_, o usando el extra _FileChooserActivity.INPUT_REGEX_FOLDER_FILTER_, si se usa una _Activity_.
+
+Al filtrar archivos y directorios, se puede definir además si los archivos/directorios que no pasen el filtro deben ser ocultados o no (en el caso de que no sean ocultados, son mostrados en gris para indicar que no pueden ser seleccionados).
 
 Con el fin de hacer esto, si se está utilizando un _Dialog_, entonces se debe llamar al método _setShowOnlySelectable()_ de la clase _FileChooserDialog_; si se está utilizando una _Activity_, entonces se debe poner un extra en el _Intent_ de nombre _FileChooserActivity.INPUT_SHOW_ONLY_SELECTABLE_.
 

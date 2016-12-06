@@ -13,7 +13,7 @@ This specification has been developed under the standard _IEEE 1016-2009_, also 
 
 * GUI - Graphical User Interface
 * IEEE - Institute of Electrical and Electronic Engineers
-* LGPL - GNU Lesser General Public License
+* MPL - Mozilla Public License
 * SDD - Software Design Description
 
 ### 1.3. References
@@ -28,7 +28,7 @@ It is assumed that the reader have basic knowledge about object-oriented program
 
 ### 2. System overview
 
-_aFileDialog_ is a library that implements a file chooser for the Android operating system, which lacks of a native graphic component for provide this functionality. The library was designed to be easy to use and easy to develop, it is licensed as open source, under LGPL v3, in order to encourage his use and development.
+_aFileDialog_ is a library that implements a file chooser for the Android operating system, which lacks of a native graphic component for provide this functionality. The library was designed to be easy to use and easy to develop, it is licensed as open source, under MPL v2.0, in order to encourage his use and development.
 
 His main features are:
 * The file chooser can be opened as a _Dialog_ and as an _Activity_.

@@ -13,7 +13,7 @@ La especificación a sido desarrollada bajo el estándar _IEEE 1016-2009_, tambi
 
 * GUI - Interfaz gráfica de usuario
 * IEEE - Instituto de Ingenieros Eléctricos y Electrónicos
-* LGPL - Licencia pública general reducida de GNU
+* MPL - Licencia pública de Mozilla
 * SDD - Descripción de diseño de software
 
 ### 1.3. Referencias
@@ -28,7 +28,7 @@ Se asume que el lector posee conocimientos básicos sobre programación orientad
 
 ## 2. Descripción general del software
 
-_aFileDialog_ es una librería que implementa un selector de archivos para el sistema operativo Android, el cual carece de un componente gráfico nativo que provea esta funcionalidad. La librería fue diseñada para ser fácil de utilizar y fácil de modificar y está licenciada como código abierto, bajo LGPL v3, a fin de alentar su uso y mantenimiento.
+_aFileDialog_ es una librería que implementa un selector de archivos para el sistema operativo Android, el cual carece de un componente gráfico nativo que provea esta funcionalidad. La librería fue diseñada para ser fácil de utilizar y fácil de modificar y está licenciada como código abierto, bajo MPL v2.0, a fin de alentar su uso y mantenimiento.
 
 Sus principales características son:
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="daidalos_hello">こんにちは 世界!</string>
+    <string name="daidalos_app_name">aFileDialog</string>
+    <color name="daidalos_gray">#888</color>
+    <string name="daidalos_select">選択</string>
+    <string name="daidalos_cancel">キャンセル</string>
+    <string name="daidalos_ok">OK</string>
+    <string name="daidalos_new_file">新規作成</string>
+    <string name="daidalos_create_file">新規作成</string>
+    <string name="daidalos_create_folder">新規作成</string>
+    <string name="daidalos_accept">実行</string>
+    <string name="daidalos_enter_file_name">ファイル名を入力してください。</string>
+    <string name="daidalos_enter_folder_name">フォルダ名を入力してください。</string>
+    <string name="daidalos_yes">はい</string>
+    <string name="daidalos_no">いいえ</string>
+    <string name="daidalos_confirm_select_file">\'$file_name\'でよろしいですか？</string>
+    <string name="daidalos_confirm_create_file">\'$file_name\'は存在しません。\n新しく作成しますか？</string>
+    <string name="daidalos_confirm_select_folder">\'$file_name\'でよろしいですか？</string>
+    <string name="daidalos_confirm_create_folder">\'$file_name\'は存在しません。\n新しく作成しますか？</string>
+    <color name="daidalos_backgroud">#000</color>
+    <color name="daidalos_active_file">#fff</color>
+    <color name="daidalos_inactive_file">#888</color>
+
+</resources>

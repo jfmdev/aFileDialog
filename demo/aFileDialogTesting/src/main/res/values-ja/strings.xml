@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">こんにちは 世界! AFileDialogTestingActivity!</string>
+    <string name="app_name">aFileDialog demo</string>
+    <string name="Open_Dialog">ダイアログで実行</string>
+    <string name="Open_Activity">アクティビティで実行</string>
+    <string name="test_dialog">ダイアログ</string>
+    <string name="test_activity">アクティビティ</string>
+    <string name="simple_open">開く</string>
+    <string name="open_downloads">ダウンロードフォルダ\nを開く</string>
+    <string name="select_folders">フォルダ選択</string>
+    <string name="create_files">ファイル作成</string>
+    <string name="select_images">画像を選択</string>
+    <string name="ask_confirmation">確認画面を表示</string>
+    <string name="custom_labels">部品をカスタマイズ</string>
+    <string name="cancel_button">キャンセルボタン</string>
+    <string name="filter_folders">選択可能フォルダ\nを制限</string>
+
+</resources>

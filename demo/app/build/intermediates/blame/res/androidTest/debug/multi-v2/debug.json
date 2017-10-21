@@ -1,0 +1,109 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/arya/P/Projects/Android/github/aFileDialog/demo/app/build/intermediates/res/merged/androidTest/debug/values-en_values-en.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/arya/P/Projects/Android/github/aFileDialog/demo/library/build/intermediates/bundles/debug/res/values-en/values-en.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,157,202,256,307,365,416,553,694,813,936,997,1062,1166,1274,1330,1380,1423,1466,1517",
+                        "endColumns": "51,49,44,53,50,57,50,136,140,118,122,60,64,103,107,55,49,42,42,50,44",
+                        "endOffsets": "102,152,197,251,302,360,411,548,689,808,931,992,1057,1161,1269,1325,1375,1418,1461,1512,1557"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/arya/P/Projects/Android/github/aFileDialog/demo/app/build/intermediates/res/merged/androidTest/debug/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/arya/P/Projects/Android/github/aFileDialog/demo/library/build/intermediates/bundles/debug/res/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,157,202,256,307,365,416,553,694,813,936,997,1062,1166,1274,1330,1380,1423,1466,1517",
+                        "endColumns": "51,49,44,53,50,57,50,136,140,118,122,60,64,103,107,55,49,42,42,50,44",
+                        "endOffsets": "102,152,197,251,302,360,411,548,689,808,931,992,1057,1161,1269,1325,1375,1418,1461,1512,1557"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/arya/P/Projects/Android/github/aFileDialog/demo/app/build/intermediates/res/merged/androidTest/debug/values-fr_values-fr.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/arya/P/Projects/Android/github/aFileDialog/demo/library/build/intermediates/bundles/debug/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,157,202,256,309,367,419,557,697,824,953,1016,1081,1185,1291,1347,1401,1445,1494,1551",
+                        "endColumns": "51,49,44,53,52,57,51,137,139,126,128,62,64,103,105,55,53,43,48,56,44",
+                        "endOffsets": "102,152,197,251,304,362,414,552,692,819,948,1011,1076,1180,1286,1342,1396,1440,1489,1546,1591"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/arya/P/Projects/Android/github/aFileDialog/demo/app/build/intermediates/res/merged/androidTest/debug/values-es_values-es.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/arya/P/Projects/Android/github/aFileDialog/demo/library/build/intermediates/bundles/debug/res/values-es/values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,157,202,256,308,366,419,548,679,798,919,982,1047,1146,1249,1305,1357,1400,1448,1504",
+                        "endColumns": "51,49,44,53,51,57,52,128,130,118,120,62,64,98,102,55,51,42,47,55,43",
+                        "endOffsets": "102,152,197,251,303,361,414,543,674,793,914,977,1042,1141,1244,1300,1352,1395,1443,1499,1543"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/arya/P/Projects/Android/github/aFileDialog/demo/app/build/intermediates/res/merged/androidTest/debug/values-ru_values-ru.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/arya/P/Projects/Android/github/aFileDialog/demo/library/build/intermediates/bundles/debug/res/values-ru/values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,157,202,256,308,366,417,532,649,758,870,932,997,1075,1154,1209,1261,1305,1348,1400",
+                        "endColumns": "51,49,44,53,51,57,50,114,116,108,111,61,64,77,78,54,51,43,42,51,43",
+                        "endOffsets": "102,152,197,251,303,361,412,527,644,753,865,927,992,1070,1149,1204,1256,1300,1343,1395,1439"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/arya/P/Projects/Android/github/aFileDialog/demo/app/build/intermediates/res/merged/androidTest/debug/values-ro_values-ro.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/arya/P/Projects/Android/github/aFileDialog/demo/library/build/intermediates/bundles/debug/res/values-ro/values-ro.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,157,202,256,310,368,420,538,660,768,880,943,1010,1096,1187,1242,1292,1335,1378,1432",
+                        "endColumns": "51,49,44,53,53,57,51,117,121,107,111,62,66,85,90,54,49,42,42,53,43",
+                        "endOffsets": "102,152,197,251,305,363,415,533,655,763,875,938,1005,1091,1182,1237,1287,1330,1373,1427,1471"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/arya/P/Projects/Android/github/aFileDialog/demo/app/build/intermediates/res/merged/androidTest/debug/values-ja_values-ja.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/arya/P/Projects/Android/github/aFileDialog/demo/library/build/intermediates/bundles/debug/res/values-ja/values-ja.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,157,202,256,303,361,411,503,597,678,761,815,871,940,1011,1064,1115,1159,1202,1249",
+                        "endColumns": "51,49,44,53,46,57,49,91,93,80,82,53,55,68,70,52,50,43,42,46,43",
+                        "endOffsets": "102,152,197,251,298,356,406,498,592,673,756,810,866,935,1006,1059,1110,1154,1197,1244,1288"
+                    }
+                }
+            ]
+        }
+    ]
+}

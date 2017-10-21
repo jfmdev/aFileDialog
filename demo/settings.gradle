@@ -1,2 +1,2 @@
-include ':aFileDialog'
+include ':library'
 include ':aFileDialogTesting'

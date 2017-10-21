@@ -10,10 +10,10 @@
 
 package ar.com.daidalos.afiledialog;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -22,7 +22,7 @@ import java.io.File;
 /**
  * A file chooser implemented in an Activity.
  */
-public class FileChooserActivity extends Activity implements FileChooser {
+public class FileChooserActivity extends AppCompatActivity implements FileChooser {
 
     // ----- Fields ----- //
 

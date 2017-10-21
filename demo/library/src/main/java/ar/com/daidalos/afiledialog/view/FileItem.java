@@ -197,18 +197,18 @@ public class FileItem extends LinearLayout {
      */
     private void updateIcon() {
         // Define the icon.
-        int icon = R.drawable.document;
+        int icon = R.drawable.ic_insert_drive_file_24dp;
         if (this.file != null && file.isDirectory()) {
-            icon = this.selectable ? R.drawable.folder : R.drawable.folder_gray;
+            icon = this.selectable ? R.drawable.ic_folder_24dp : R.drawable.ic_folder_grey_24dp;
         } else {
-            icon = this.selectable ? R.drawable.document : R.drawable.document_gray;
+            icon = this.selectable ? R.drawable.ic_insert_drive_file_24dp : R.drawable.ic_insert_drive_file_grey_24dp;
         }
 
         // Set the icon.
         this.icon.setImageDrawable(getResources().getDrawable(icon));
 
         // Change the color of the text.
-        if (icon != R.drawable.document_gray && icon != R.drawable.folder_gray) {
+        if (icon != R.drawable.ic_insert_drive_file_24dp && icon != R.drawable.ic_folder_24dp) {
             this.label.setTextColor(getResources().getColor(R.color.daidalos_active_file));
         } else {
             this.label.setTextColor(getResources().getColor(R.color.daidalos_inactive_file));

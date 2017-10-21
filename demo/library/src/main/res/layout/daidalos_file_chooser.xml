@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/add"
+            android:drawableLeft="@drawable/ic_add_24dp"
             android:text="@string/daidalos_new_file" />
 
         <Button
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/tick"
+            android:drawableLeft="@drawable/ic_done_24dp"
             android:text="@string/daidalos_ok" />
 
         <Button
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableLeft="@drawable/no"
+            android:drawableLeft="@drawable/ic_close_24dp"
             android:text="@string/daidalos_cancel" />
 
     </LinearLayout>

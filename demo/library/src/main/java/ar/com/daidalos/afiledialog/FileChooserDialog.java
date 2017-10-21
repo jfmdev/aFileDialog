@@ -12,6 +12,7 @@ package ar.com.daidalos.afiledialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.support.v7.app.AppCompatDialog;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -23,7 +24,7 @@ import java.util.List;
 /**
  * A file chooser implemented in a Dialog.
  */
-public class FileChooserDialog extends Dialog implements FileChooser {
+public class FileChooserDialog extends AppCompatDialog implements FileChooser {
 
     // ----- Attributes ----- //
 

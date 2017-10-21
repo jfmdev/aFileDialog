@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-
 android {
 
     compileSdkVersion compile_sdk_version
@@ -22,3 +21,6 @@ android {
 
 }
 
+dependencies {
+    implementation 'com.android.support:design:' + support_version
+}

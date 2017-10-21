@@ -199,7 +199,7 @@ public class FileItem extends LinearLayout {
         // Define the icon.
         int icon = R.drawable.ic_insert_drive_file_24dp;
         if (this.file != null && file.isDirectory()) {
-            icon = this.selectable ? R.drawable.ic_folder_24dp : R.drawable.ic_folder_grey_24dp;
+            icon = this.selectable ? R.drawable.ic_folder_24dp : R.drawable.ic_folder_brown_24dp;
         } else {
             icon = this.selectable ? R.drawable.ic_insert_drive_file_24dp : R.drawable.ic_insert_drive_file_grey_24dp;
         }

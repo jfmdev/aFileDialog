@@ -128,8 +128,8 @@ public class FileChooserActivity extends AppCompatActivity implements FileChoose
         this.setContentView(R.layout.daidalos_file_chooser);
 
         // Set the background color.
-        LinearLayout layout = (LinearLayout) this.findViewById(R.id.rootLayout);
-        layout.setBackgroundColor(getResources().getColor(R.color.daidalos_backgroud));
+//        LinearLayout layout = (LinearLayout) this.findViewById(R.id.rootLayout);
+//        layout.setBackgroundColor(getResources().getColor(R.color.daidalos_backgroud));
 
         // Initialize fields.
         this.useBackButton = false;

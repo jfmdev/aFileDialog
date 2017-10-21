@@ -597,21 +597,21 @@ class FileChooserCore {
                     });
 
                     // Iterate all the files in the folder.
-                    for (int i = 0; i < fileList.length; i++) {
+                    for (File aFileList : fileList) {
                         // Verify if file can be selected.
                         boolean selectable = true;
-                        if (!fileList[i].isDirectory()) {
+                        if (!aFileList.isDirectory()) {
                             // File is selectable as long the user is not selecting folders and if pass the filter (if defined).
-                            selectable = !this.folderMode && (this.filter == null || fileList[i].getName().matches(this.filter));
+                            selectable = !this.folderMode && (this.filter == null || aFileList.getName().matches(this.filter));
                         } else {
                             // Folders can be selected iif pass the filter (if defined).
-                            selectable = this.folderFilter == null || fileList[i].getAbsolutePath().matches(this.folderFilter);
+                            selectable = this.folderFilter == null || aFileList.getAbsolutePath().matches(this.folderFilter);
                         }
 
                         // Verify if the file must be show.
                         if (selectable || !this.showOnlySelectable) {
                             // Create the file item and add it to the list.
-                            FileItem fileItem = new FileItem(this.chooser.getContext(), fileList[i]);
+                            FileItem fileItem = new FileItem(this.chooser.getContext(), aFileList);
                             fileItem.setSelectable(selectable);
                             fileItems.add(fileItem);
                         }

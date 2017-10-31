@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ar.com.daidalos.afiledialog">
+
+
+    <application
+
+        android:label="@string/daidalos_app_name"
+        android:theme="@style/App.NoActionBar">
+        <activity android:name="ar.com.daidalos.afiledialog.FileChooserActivity" />
+    </application>
+
+</manifest>

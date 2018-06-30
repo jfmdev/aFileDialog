@@ -21,6 +21,19 @@ In order to use _aFileDialog_ in your application you must do three steps:
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
+**4)** On Android 6.0 and higher, besides listing the permission on the _manifest_ file, you must also request users to approve the permission at runtime. For example:
+
+```java
+if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+    // If permission is not granted, ask it.
+    ActivityCompat.requestPermissions(this,
+            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+            MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+}
+```
+
+> Check https://developer.android.com/training/permissions/requesting for more information.
+
 You can check the [Android documentation](https://developer.android.com/sdk/installing/create-project.html#ReferencingLibraryModule) in order to get more information about how to reference a library project and how to declare an activity in the manifest file.
 
 ### 1.2. Show the dialog

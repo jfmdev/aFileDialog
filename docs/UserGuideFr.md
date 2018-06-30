@@ -21,6 +21,19 @@ Pour utiliser _aFileDialog_, dans votre logiciel, il faut suivre les suivants pa
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
+**4)** Sur Android 6.0 et versions ultérieures, en plus d'indiquer la permission sur le fichier _manifest_, vous devez également demander aux utilisateurs d'approuver l'autorisation lors de l'exécution. Par exemple:
+
+```java
+if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+    // If permission is not granted, ask it.
+    ActivityCompat.requestPermissions(this,
+            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+            MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+}
+```
+
+> Vous pouvez trouvar plus d'information dans https://developer.android.com/training/permissions/requesting.
+
 Pour plus d'information sur comment faire une référence à un projet de librairie et comment déclarer une activité dans le fichier de manifeste, vous pouvez lire la [documentation officielle d'Android](https://developer.android.com/sdk/installing/create-project.html#ReferencingLibraryModule).
 
 ###  1.2. Afficher le sélecteur de fichiers 

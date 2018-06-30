@@ -10,15 +10,20 @@
 
 package ar.com.daidalos.afiledialog.test;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
+
+import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
 
 import java.io.File;
 import java.io.Serializable;
@@ -372,6 +377,8 @@ public class AFileDialogTestingActivity extends Activity {
 	};
 	*/
 
+	private static int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 101;
+
     // ---- Methods for display the results ----- //
 
     /**
@@ -420,6 +427,14 @@ public class AFileDialogTestingActivity extends Activity {
         buttonDialog8.setOnClickListener(btnDialogCancelButton);
         Button buttonDialog9 = (Button) this.findViewById(R.id.dialog_filter_folders);
         buttonDialog9.setOnClickListener(btnDialogFilterFolders);
+
+        // Check permissions (required starting Android 6).
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            // If permission is not granted, ask it.
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
+        }
     }
 
     @Override

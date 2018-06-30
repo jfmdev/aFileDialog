@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
 
     compileSdkVersion compile_sdk_version
-    buildToolsVersion build_tools_version
 
     defaultConfig {
         applicationId "ar.com.daidalos.afiledialog.test"
@@ -20,10 +19,11 @@ android {
         }
     }
 
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
 
     implementation 'com.android.support:design:' + support_version
-    compile project(':library')
+    implementation project(':library')
 }

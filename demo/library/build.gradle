@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 android {
 
     compileSdkVersion compile_sdk_version
-    buildToolsVersion build_tools_version
 
     defaultConfig {
 
@@ -19,6 +18,7 @@ android {
         }
     }
 
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {

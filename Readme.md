@@ -1,6 +1,8 @@
 aFileDialog
 ===========
 
+> IMPORTANT: This branch is deprecated and will be not longer maintained.
+
 **aFileDialog** is an Android library which implements a simple and easy to use _file chooser_.
 
 His main features are:

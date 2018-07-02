@@ -583,6 +583,13 @@ class FileChooserCore {
             if (this.currentFolder.isDirectory()) {
                 // Get the folder's files.
                 File[] fileList = this.currentFolder.listFiles();
+
+                //Workarround if directories in /storage/emulated cannot be listed
+                if (fileList == null && this.currentFolder.getAbsolutePath().equals("/storage/emulated")) {
+                    fileList = new File[1];
+                    fileList[0] = Environment.getExternalStorageDirectory();
+                }
+
                 if (fileList != null) {
                     // Order the files alphabetically and separating folders from files.
                     Arrays.sort(fileList, new Comparator<File>() {

@@ -1,3 +1,5 @@
+> This project has been archived due to newer versions of Android providing native support for these features.
+
 aFileDialog
 ===========
 
